@@ -1,13 +1,11 @@
 <?php
-$type = 'mysql'; 
 $server = 'localhost';
-$db = 'exam2';
-$port = '3006';
-$charset = 'utf8mb4';
-$dsn = `$type:host=$server;dbname=$db;port=$port;charset=$charset`;
-
+$username = 'root';
+ $dsn = "mysql:host=$server;dbname=exam2";
 try {
-$pdo = new PDO($dsn); //Check back in might need userpass(Iforgot)
-} catch (PDOException $e) {
+$pdo = new PDO($dsn, $username);
+} 
+catch (PDOException $e) {
     print_r("PDO Error:  " + $e);
 }
+?>
